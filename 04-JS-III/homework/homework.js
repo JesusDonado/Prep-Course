@@ -3,19 +3,21 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
+  return array[0];
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  return array[array.length - 1];
 }
 
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
-
+  return array.length;
 }
 
 
@@ -24,8 +26,11 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  
-
+  let guardarEnteros = [];
+  for (let i = 0; i < array.length; i++) {
+    guardarEnteros.push(array[i]+1);
+  }
+  return guardarEnteros;
 }
 
 
@@ -33,9 +38,8 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
-  // agregarItemAlFInalDelArray(123, "henry")
-  // array = [123, "henry"]
-
+  array.push(elemento);
+  return array;
 }
 
 
@@ -44,7 +48,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
-
+  array.unshift(elemento);
+  return array;
 }
 
 
@@ -54,6 +59,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  return palabras.join(" ");;
 }
 
 
@@ -61,6 +67,12 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] === elemento){
+      return true;
+    }
+  }
+  return false;
 }
 
 
@@ -68,13 +80,24 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+  let acumulador = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    acumulador += numeros[i];
+  }
+  return acumulador;
 }
 
-
+//
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  let acumulador = 0;
+  for (let i = 0; i < resultadosTest.length; i++) {
+    acumulador += resultadosTest[i];
+    var division = acumulador / resultadosTest.length;
+  }
+  return division;
 }
 
 
@@ -82,6 +105,12 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  for (let i = 0; i < numeros.length; i++) {
+    if(numeros[i] > numeros[i+1]){
+      return numeros[i];
+    }
+  }
+  return numeros;
 }
 
 
@@ -89,6 +118,7 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  
 }
 
 
@@ -104,7 +134,19 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  
+  //domingo=1
+  //lunes=2
+  //martes=3
+  //miercoles=4
+  //jueves=5
+  //viernes=6
+  //sabado=7
+  if(numeroDeDia === 2 || numeroDeDia === 3 || numeroDeDia === 4 || numeroDeDia === 5 || numeroDeDia === 6){
+    return 'Es dia Laboral';
+  }
+  else if(numeroDeDia === 1 || numeroDeDia === 7){
+    return 'Es fin de semana';
+  }
 } 
 
 
@@ -120,7 +162,12 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  
+  if(arreglo!==arreglo){
+    return true;
+  }
+  else{
+    return false;
+  }
 } 
 
 
@@ -157,6 +204,7 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  
 }
 
 
